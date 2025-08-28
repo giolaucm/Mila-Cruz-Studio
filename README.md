@@ -1,7 +1,7 @@
 
   # Site Responsivo Simples
 
-  This is a code bundle for Site Responsivo Simples. The original project is available at https://www.figma.com/design/VJXB3olzBaRw72wdxdPQbR/Site-Responsivo-Simples.
+  Catálogo de procedimentos nos quais a profissional atua, encaminhando diretamente para o agendamento pelo whatsapp
 
   ## Running the code
 
