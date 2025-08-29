@@ -1,5 +1,6 @@
 import { useState } from "react";
 import backgroundImg from "./img/background.png";
+import logoImg from "./img/logo.svg";
 
 // Ícones simples em SVG
 const ChevronDown = () => (
@@ -61,6 +62,7 @@ const services = [
     id: "banho-gel",
     name: "Banho de Gel",
     description: "Fortalecimento e brilho duradouro",
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=300&fit=crop",
     procedure: "Aplicação de gel sobre a unha natural para proteção e brilho",
     effect: "Unhas mais fortes e com aparência natural",
     duration: "45-60 minutos",
@@ -72,6 +74,7 @@ const services = [
     id: "esmaltacao-gel",
     name: "Esmaltação em Gel",
     description: "Cor vibrante que dura até 3 semanas",
+    image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=400&h=300&fit=crop",
     procedure: "Aplicação de esmalte em gel com secagem em cabine UV/LED",
     effect: "Cor intensa e duradoura sem descascar",
     duration: "60-75 minutos",
@@ -83,6 +86,7 @@ const services = [
     id: "unha-tradicional",
     name: "Unha Tradicional",
     description: "Cuidado clássico para suas unhas",
+    image: "https://images.unsplash.com/photo-1599948128020-9a44d1f0824a?w=400&h=300&fit=crop",
     procedure: "Cuidados básicos + esmaltação tradicional",
     effect: "Unhas bem cuidadas e com cor",
     duration: "30-45 minutos",
@@ -94,6 +98,7 @@ const services = [
     id: "spa-pes",
     name: "SPA dos Pés",
     description: "Relaxamento e cuidado completo",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop",
     procedure: "Escalda-pés + esfoliação + hidratação + esmaltação",
     effect: "Pés macios, relaxados e bem cuidados",
     duration: "75-90 minutos",
@@ -123,14 +128,12 @@ export default function App() {
             alt="Mila Cruz Studio"
             className="absolute inset-0 w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-mila-dark-brown to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-mila-terracotta/40 to-transparent" />
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-mila-white text-center px-6">
-            <div className="text-mila-cream mb-4">
-              <MoonIcon />
-            </div>
+            <img src={logoImg} alt="Logo" style={{width: '30px', height: '30px'}} className="mb-4" />
             <h1 className="text-4xl mb-2 font-medium">Mila Cruz</h1>
             <p className="text-lg opacity-95 mb-3">Sua beleza em boas mãos</p>
-            <span className="badge bg-mila-white text-mila-dark-brown">Studio de Manicure</span>
+            <span className="badge bg-mila-white" style={{color: '#305369'}}>Studio de Manicure</span>
           </div>
         </div>
 
@@ -158,7 +161,7 @@ export default function App() {
           {/* Catálogo */}
           <div className="mb-6">
             <h2 className="text-2xl text-mila-teal mb-2 text-center font-bold">Meus Procedimentos</h2>
-            <p className="text-center text-mila-sage mb-6">
+            <p className="text-center mb-6" style={{color: '#305369'}}>
               Descubra os tratamentos que vão transformar suas unhas
             </p>
 
@@ -169,13 +172,22 @@ export default function App() {
                     className="cursor-pointer hover:bg-mila-cream transition-colors"
                     onClick={() => setOpenService(openService === service.id ? null : service.id)}
                   >
-                    <div className="card-header pb-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h3 className="text-lg text-mila-terracotta font-semibold">{service.name}</h3>
-                          <p className="text-mila-dark-brown">{service.description}</p>
+                    <div className="flex">
+                      <div className="w-24 flex-shrink-0">
+                        <img
+                          src={service.image}
+                          alt={service.name}
+                          className="w-full h-full object-cover rounded-l-lg"
+                        />
+                      </div>
+                      <div className="card-header flex-1">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h3 className="text-lg text-mila-terracotta font-semibold">{service.name}</h3>
+                            <p className="text-mila-dark-brown">{service.description}</p>
+                          </div>
+                          {openService === service.id ? <ChevronUp /> : <ChevronDown />}
                         </div>
-                        {openService === service.id ? <ChevronUp /> : <ChevronDown />}
                       </div>
                     </div>
                   </div>
@@ -270,7 +282,7 @@ export default function App() {
               <div className="separator" />
 
               <div>
-                <h4 className="font-medium text-mila-terracotta mb-2 flex items-center gap-1">
+                <h4 className="font-medium text-mila-terracotta mb-2 flex items-center gap-2">
                   <Clock />
                   Horários de Atendimento:
                 </h4>
@@ -293,11 +305,11 @@ export default function App() {
           {/* Footer */}
           <div className="text-center space-y-4 pb-8">
             <div className="separator" />
-            <p className="text-sm text-mila-sage">Feito com carinho para você</p>
+            <p className="text-sm" style={{color: '#A34924'}}>Feito com carinho para você</p>
             <div className="flex justify-center">
               <button
                 onClick={() => handleWhatsApp("Oi! Vi seu site e gostaria de saber mais sobre seus trabalhos")}
-                className="text-mila-teal hover:bg-mila-teal flex items-center gap-1 text-sm"
+                className="text-mila-teal hover:bg-mila-teal flex items-center gap-2 text-sm p-2"
               >
                 <Instagram />
                 Siga no Instagram

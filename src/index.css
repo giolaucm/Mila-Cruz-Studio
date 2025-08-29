@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap");
 
 :root {
-  --mila-cream: #F5F1EB;
+  --mila-cream: #E8D7BD;
   --mila-white: #FFFFFF;
-  --mila-terracotta: #D4A574;
-  --mila-sage: #A8B5A0;
-  --mila-teal: #7A9B8E;
-  --mila-dark-brown: #5D4E37;
+  --mila-terracotta: #A34924;
+  --mila-sage: #FCB756;
+  --mila-teal: #305369;
+  --mila-dark-brown: #26211E;
 }
 
 * {
@@ -19,6 +19,10 @@ body {
   font-family: 'Sulphur Point', sans-serif;
   background-color: var(--mila-cream);
   color: var(--mila-dark-brown);
+}
+
+* {
+  font-family: 'Sulphur Point', sans-serif !important;
 }
 
 .min-h-screen { min-height: 100vh; }
@@ -84,6 +88,7 @@ body {
 .to-mila-teal { --tw-gradient-to: var(--mila-teal); }
 .via-mila-terracotta { --tw-gradient-stops: var(--tw-gradient-from), rgba(212, 165, 116, 0.6), var(--tw-gradient-to, rgba(212, 165, 116, 0)); }
 .from-mila-dark-brown { --tw-gradient-from: rgba(93, 78, 55, 0.8); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(93, 78, 55, 0)); }
+.from-mila-terracotta\/40 { --tw-gradient-from: rgba(163, 73, 36, 0.4); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(163, 73, 36, 0)); }
 .to-transparent { --tw-gradient-to: transparent; }
 .overflow-hidden { overflow: hidden; }
 .space-y-4 > * + * { margin-top: 1rem; }
