@@ -1,6 +1,5 @@
 {
-  "buildCommand": "sudo npm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
-  "installCommand": "sudo npm install"
+  "framework": "vite"
 }
