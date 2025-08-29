@@ -1,0 +1,1 @@
+// Arquivo removido - usando CSS customizado
